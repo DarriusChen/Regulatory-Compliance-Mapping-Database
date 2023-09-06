@@ -1,0 +1,16 @@
+{
+  "description value": "emilyyy",
+  "collection_position": null,
+  "result_metadata": null,
+  "metadata_checksum": null,
+  "collection_id": null,
+  "name": "testinghehe",
+  "dataset_query": {
+    "database": 2,
+    "query": {
+      "source-table": 21
+    },
+    "type": "query"
+  },
+  "display": "table"
+}

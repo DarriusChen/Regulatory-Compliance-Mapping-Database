@@ -1,0 +1,15 @@
+
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "DarriusChen", email = "darriuschen0926@gmail.com"},
+]
+dependencies = [
+    "jupyterlab>=4.0.5",
+    "metabase-api>=0.3.0",
+    "pandas>=2.1.0",
+]
+requires-python = ">=3.11"
+license = {text = "MIT"}

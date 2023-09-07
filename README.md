@@ -1,5 +1,11 @@
 # Regulatory-Compliance-Mapping-Database
-This project is aim to create a database of the mapping between different Regulatory Compliance Standards, and make a convenient searching function.
+This project aims to create a database of the mapping between different Regulatory Compliance Standards and Cybersecurity Frameworks, then make a convenient search function.
+The five standards and frameworks include:
+1. NIST Cybersecurity Framework (CSF)
+2. NIST SP 800-53
+3. MITRE ATT&CK (V13)
+4. MITRE D3FEND
+5. ISO 27001
 
 ### GraphQL server
 Use case: search data in SQLite database using gql.

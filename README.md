@@ -7,6 +7,11 @@ The five standards and frameworks include:
 4. MITRE D3FEND
 5. ISO 27001
 
+## Prerequisites:
+1. SQLite
+2. Docker
+3. Python
+
 ### GraphQL server
 Use case: Search data in SQLite database using gql.   
 Run `npm start` to launch the server, and then there will be a playground at port 4000.   
@@ -14,8 +19,17 @@ You can try different functions you want, type the columns to query, and the var
 ![image](https://github.com/DarriusChen/Regulatory-Compliance-Mapping-Database/blob/main/images/gql.png)
 In the example above, what I did is query six columns, "csfFId, csfFName, defendTName, attackTName, sp80053CName, iso27001CName", where the values of column "csfFId" equal to "ID"
 
-### Metabase API
+### Metabase & metabase API
 Use case: Get data from the Metabase server using Python.  
+Prerequisites: Docker   
+#### Launch Metabase server
+```
+docker pull metabase/metabase:latest
+docker run -d -p 12345:3000 -v /Users/darri/Desktop/iii-intern/mapping/framework.db:/opt/metabase.db --name metabase2 metabase/metabase
+```
+![image](https://github.com/DarriusChen/Regulatory-Compliance-Mapping-Database/blob/main/images/metabase-operation.png)
+![image](https://github.com/DarriusChen/Regulatory-Compliance-Mapping-Database/blob/main/images/metabase-result.png)
+#### Metabse API
 You can either directly use the requests library to get data or use the "metabase_api" library.   
 1. Get data using python requests:
     ```
@@ -37,7 +51,7 @@ You can either directly use the requests library to get data or use the "metabas
     # get data (ask questions)
     
     # how many tables & names of those tables
-    url = 'http://localhost:12345/api/table/'
+    url = 'http://{your-host-name}/api/table/'
     question2 = requests.get(url=url,headers=headers).json()
     table_name = [i["display_name"] for i in question2]
     print(f"There are {len(question2)} tables.\n",f"Names of those tables: {table_name}")
@@ -47,6 +61,8 @@ You can either directly use the requests library to get data or use the "metabas
     card_question = requests.post(url=url_card,headers=headers).json()
     pd.DataFrame(card_question)
     ```
+    ![image](https://github.com/DarriusChen/Regulatory-Compliance-Mapping-Database/blob/main/images/requests.png)
+    
 2. Get data using metabase_api:
    ```
    from metabase_api import Metabase_API

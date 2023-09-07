@@ -11,7 +11,7 @@ The five standards and frameworks include:
 Use case: Search data in SQLite database using gql.   
 Run `npm start` to launch the server, and then there will be a playground at port 4000.   
 You can try different functions you want, type the columns to query, and the variable you want to filter.   
-![image](https://github.com/DarriusChen/Regulatory-Compliance-Mapping-Database/assets/90314540/eef4c7b8-a918-48a0-87d2-49f292b95748)
+![image](https://github.com/DarriusChen/Regulatory-Compliance-Mapping-Database/blob/main/images/gql.png)
 In the example above, what I did is query six columns, "csfFId, csfFName, defendTName, attackTName, sp80053CName, iso27001CName", where the values of column "csfFId" equal to "ID"
 
 ### Metabase API
@@ -54,4 +54,5 @@ You can either directly use the requests library to get data or use the "metabas
    results = mb.get_card_data(card_id=5, data_format='json') # data format can be json or csv
    pd.DataFrame(results)
    ```
+   ![image](https://github.com/DarriusChen/Regulatory-Compliance-Mapping-Database/blob/main/images/result-df.png)
 

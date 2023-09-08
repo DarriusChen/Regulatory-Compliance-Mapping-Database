@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  metabase1:
+    image: metabase/metabase:latest
+    container_name: metabase
+    ports:
+      - 12345:3000
+    volumes: # you can set the path where your framewok.db stored
+      - ../graphql-server/src/database/framework.db:/opt/metabase.db

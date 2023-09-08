@@ -1,7 +1,7 @@
 # Regulatory-Compliance-Mapping-Database
 
 ## Abstract
-This project aims to create a database of the mapping between different Regulatory Compliance Standards and Cybersecurity Frameworks. We use Metabase to help join the tables,  and after that, we use GraphQL as our data search tool. (Of course, there are still many alternatives like Elastic Stack or Redis, but we use GraphQL in this case.)     
+This project aims to create a database of the mapping between different Regulatory Compliance Standards and Cybersecurity Frameworks. We use Metabase to help join the tables, then use GraphQL as our data search tool. (Of course, there are still many alternatives like Elastic Stack or Redis, but we use GraphQL in this case.)     
 The spreadsheets of five standards and frameworks:
 1. [NIST Cybersecurity Framework (CSF)](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)
 2. [NIST SP 800-53](https://csrc.nist.gov/files/pubs/sp/800/53/r5/upd1/final/docs/sp800-53r5-controls.xlsx)
@@ -34,7 +34,7 @@ Because of the size limit, I put the SQLite database on huggingface: [framework.
 
 ### GraphQL server
 Use case: Search data in SQLite database using gql.   
-Run `npm start` to launch the server, and then there will be a playground at port 4000.   
+Run `npm start` under "graphql-server/" to launch the server, and then there will be a playground at port 4000.   
 You can try different functions you want, type the columns to query, and the variable you want to filter.   
 ![image](https://github.com/DarriusChen/Regulatory-Compliance-Mapping-Database/blob/main/images/gql.png)
 In the example above, what I did is query six columns, "csfFId, csfFName, defendTName, attackTName, sp80053CName, iso27001CName", where the values of column "csfFId" equal to "ID"

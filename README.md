@@ -56,6 +56,8 @@ You can either directly use the requests library to get data or use the "metabas
     ```
     pip3 install pandas # if needed
     pip3 install requests # if needed
+    pip3 install pdm # virtual environment tool
+    pdm add
    ```
     ```
     import pandas as pd

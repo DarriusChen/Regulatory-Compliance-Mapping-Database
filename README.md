@@ -25,7 +25,7 @@ In order to join all data from different frameworks, we need some mapping spread
    is a query language for APIs and a runtime for fulfilling those queries with your existing data. It provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.
    
 ## Database
-Because of the size limit, I put the SQLite database on huggingface: [framework.db](https://huggingface.co/datasets/Darrius0926/Regulatory-Compliance-Mapping-Database/blob/main/framework.db)
+Because of the size limit, I put the SQLite database on huggingface: [framework.db](https://huggingface.co/datasets/Darrius0926/Regulatory-Compliance-Mapping-Database/blob/main/framework.db). You should download it and put it under "graphql-server/src/database".
 
 ## Prerequisites:
 1. SQLite (3.39.5)
@@ -44,11 +44,12 @@ Use case: Get data from the Metabase server using Python.
 Prerequisites: Docker   
 #### Launch Metabase server
 ```
-docker pull metabase/metabase:latest
-docker run -d -p 12345:3000 -v /Users/darri/Desktop/iii-intern/mapping/framework.db:/opt/metabase.db --name metabase2 metabase/metabase
+docker-compose up  # run this command under metabase directory
 ```
 ![image](https://github.com/DarriusChen/Regulatory-Compliance-Mapping-Database/blob/main/images/metabase-operation.png)
+This is the edit interface which can let you do some actions like join, filter, or sort without writing SQL commands. (You can also get the SQL commands of what you did.)
 ![image](https://github.com/DarriusChen/Regulatory-Compliance-Mapping-Database/blob/main/images/metabase-result.png)
+Above is the result of joining tables using Metabase.
 ### Metabse API
 You can either directly use the requests library to get data or use the "metabase_api" library.   
 1. Get data using python requests:

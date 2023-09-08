@@ -99,4 +99,4 @@ You can either directly use the requests library to get data or use the "metabas
    results = mb.get_card_data(card_id=5, data_format='json') # data format can be json or csv
    pd.DataFrame(results)
    ```
-   ![image](https:github.com/DarriusChen/Regulatory-Compliance-Mapping-Database/blob/main/images/result-df.png)
+   ![image](https://github.com/DarriusChen/Regulatory-Compliance-Mapping-Database/blob/main/images/result-df.png)

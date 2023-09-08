@@ -19,10 +19,10 @@ In order to join all data from different frameworks, we need some mapping spread
 
 ## Tools
 1. [Metabase](https://www.metabase.com/)
-   Metabase is a simple and powerful analytics tool which lets anyone learn and make decisions from their company’s data—no technical knowledge required.
+   is a simple and powerful analytics tool which lets anyone learn and make decisions from their company’s data—no technical knowledge required.
    
 2. [GraghQL](https://graphql.org/)
-   GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. It provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.
+   is a query language for APIs and a runtime for fulfilling those queries with your existing data. It provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.
    
 ## Database
 Because of the size limit, I put the SQLite database on huggingface: [framework.db](https://huggingface.co/datasets/Darrius0926/Regulatory-Compliance-Mapping-Database/blob/main/framework.db)

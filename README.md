@@ -53,12 +53,14 @@ Above is the result of joining tables using Metabase.
 ### Metabse API
 You can either directly use the requests library to get data or use the "metabase_api" library.   
 1. Get data using python requests:
+   Commands in terminal 
     ```
     pip3 install pandas # if needed
     pip3 install requests # if needed
     pip3 install pdm # virtual environment tool
     pdm add
    ```
+    Python codes
     ```
     import pandas as pd
     import requests

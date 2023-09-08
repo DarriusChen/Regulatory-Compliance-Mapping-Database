@@ -163,7 +163,7 @@ This is the edit interface which can let you do some actions like join, filter, 
 Above is the result of joining tables using Metabase.
 ### Metabse API
 You can either directly use the requests library to get data or use the "metabase_api" library.   
-1. Get data using python requests:  
+1. Get data using python requests:    
    Commands in terminal 
     ```
     pip3 install pandas # if needed
@@ -210,48 +210,3 @@ You can either directly use the requests library to get data or use the "metabas
    pd.DataFrame(results)
    ```
    ![image](https:github.com/DarriusChen/Regulatory-Compliance-Mapping-Database/blob/main/images/result-df.png)
-
-   Commands in terminal 
-    ```
-    pip3 install pandas # if needed
-    pip3 install requests # if needed
-    pip3 install pdm # virtual environment tool
-    pdm add
-   ```
-    Python codes
-    ```
-    import pandas as pd
-    import requests
-
-    # get the credentials
-    response_id = requests.post('http://{your-host-name}/api/session',
-                         headers = {'Content-Type': 'application/json'},
-                         json={'username': {your-user-name},
-                               'password': {your-passwords})
-    session_id = response_id.json()['id']
-    headers = {'X-Metabase-Session': session_id}
-
-    # get data (ask questions)
-    
-    # how many tables & names of those tables
-    url = 'http://{your-host-name}/api/table/'
-    question2 = requests.get(url=url,headers=headers).json()
-    table_name = [i["display_name"] for i in question2]
-    print(f"There are {len(question2)} tables.\n",f"Names of those tables: {table_name}")
-
-    # get the all mapping question (card)
-    url_card = 'http://{your-host-name}/api/card/{your-card-id}/query/json'
-    card_question = requests.post(url=url_card,headers=headers).json()
-    pd.DataFrame(card_question)
-    ```
-    ![image](https://github.com/DarriusChen/Regulatory-Compliance-Mapping-Database/blob/main/images/requests.png)
-    
-2. Get data using metabase_api:
-   ```
-   from metabase_api import Metabase_API
-   mb = Metabase_API('http://{your-host-name}', {your-account}, {your-passwords)  # if password is not given, it will prompt for password
-   results = mb.get_card_data(card_id=5, data_format='json') # data format can be json or csv
-   pd.DataFrame(results)
-   ```
-   ![image](https://github.com/DarriusChen/Regulatory-Compliance-Mapping-Database/blob/main/images/result-df.png)
-

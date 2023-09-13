@@ -25,7 +25,7 @@ In order to join all data from different frameworks, we need some mapping spread
    is a query language for APIs and a runtime for fulfilling those queries with your existing data. It provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.
    
 ## Database
-Because of the size limit, I put the SQLite database on huggingface: [framework.db](https://huggingface.co/datasets/Darrius0926/Regulatory-Compliance-Mapping-Database/blob/main/framework.db). You should download it and put it under "graphql-server/src/database".
+The Database is for internal use, so I can't share the database. You can try with your own database with the workflow of this project. (The original database is put under "graphql-server/src/database".)
 
 ## Prerequisites:
 1. SQLite (3.39.5)

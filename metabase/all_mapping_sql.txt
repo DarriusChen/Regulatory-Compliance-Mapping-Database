@@ -1,0 +1,59 @@
+SELECT
+  "CSF_Function"."csf_f_ID" AS "csf_f_ID",
+  "CSF_Function"."csf_f_name" AS "csf_f_name",
+  "CSF_Function"."csf_f_version" AS "csf_f_version",
+  "Csf Category"."csf_c_ID" AS "Csf Category__csf_c_ID",
+  "Csf Category"."csf_c_name" AS "Csf Category__csf_c_name",
+  "Csf Category"."csf_c_content" AS "Csf Category__csf_c_content",
+  "Csf Subcategory"."csf_s_ID" AS "Csf Subcategory__csf_s_ID",
+  "Csf Subcategory"."csf_s_content" AS "Csf Subcategory__csf_s_content",
+  "Sp80053 Control - Sp80053 C"."sp80053_c_ID" AS "Sp80053 Control - Sp80053 C__sp80053_c_ID",
+  "Sp80053 Control - Sp80053 C"."sp80053_c_name" AS "Sp80053 Control - Sp80053 C__sp80053_c_name",
+  "Sp80053 Control - Sp80053 C"."sp80053_c_content" AS "Sp80053 Control - Sp80053 C__sp80053_c_content",
+  "Sp80053 Control - Sp80053 C"."sp80053_c_discussion" AS "Sp80053 Control - Sp80053 C__sp80053_c_discussion",
+  "Sp80053 Control - Sp80053 C"."sp80053_c_label" AS "Sp80053 Control - Sp80053 C__sp80053_c_label",
+  "Sp80053 Control - Sp80053 C"."sp80053_c_related" AS "Sp80053 Control - Sp80053 C__sp80053_c_related",
+  "Sp80053 Control - Sp80053 C"."sp80053_c_version" AS "Sp80053 Control - Sp80053 C__sp80053_c_version",
+  "Iso27001 Control - Iso27001 C"."iso27001_c_ID" AS "Iso27001 Control - Iso27001 C__iso27001_c_ID",
+  "Iso27001 Control - Iso27001 C"."iso27001_c_name" AS "Iso27001 Control - Iso27001 C__iso27001_c_name",
+  "Iso27001 Control - Iso27001 C"."iso27001_c_content" AS "Iso27001 Control - Iso27001 C__iso27001_c_content",
+  "Iso27001 Control - Iso27001 C"."iso27001_c_label" AS "Iso27001 Control - Iso27001 C__iso27001_c_label",
+  "Iso27001 Control - Iso27001 C"."iso27001_c_version" AS "Iso27001 Control - Iso27001 C__iso27001_c_version",
+  "Defend Technique - Defend T"."defend_t_ID" AS "Defend Technique - Defend T__defend_t_ID",
+  "Defend Technique - Defend T"."defend_t_name" AS "Defend Technique - Defend T__defend_t_name",
+  "Defend Technique - Defend T"."defend_t_desc" AS "Defend Technique - Defend T__defend_t_desc",
+  "Defend Technique - Defend T"."defend_t_label" AS "Defend Technique - Defend T__defend_t_label",
+  "Defend Technique - Defend T"."defend_t_matrix_version" AS "Defend Technique - Defend T__defend_t_matrix_version",
+  "Defend Tactic - Defend Tac"."defend_tac_ID" AS "Defend Tactic - Defend Tac__defend_tac_ID",
+  "Defend Tactic - Defend Tac"."defend_tac_name" AS "Defend Tactic - Defend Tac__defend_tac_name",
+  "Defend Tactic - Defend Tac"."defend_tac_desc" AS "Defend Tactic - Defend Tac__defend_tac_desc",
+  "Attack Technique - Attack T"."attack_t_ID" AS "Attack Technique - Attack T__attack_t_ID",
+  "Attack Technique - Attack T"."attack_t_name" AS "Attack Technique - Attack T__attack_t_name",
+  "Attack Technique - Attack T"."attack_t_version" AS "Attack Technique - Attack T__attack_t_version",
+  "Attack Technique - Attack T"."attack_t_platforms" AS "Attack Technique - Attack T__attack_t_platforms",
+  "Attack Technique - Attack T"."attack_t_created" AS "Attack Technique - Attack T__attack_t_created",
+  "Attack Technique - Attack T"."attack_t_modified" AS "Attack Technique - Attack T__attack_t_modified",
+  "Attack Technique - Attack T"."attack_t_bypassed" AS "Attack Technique - Attack T__attack_t_bypassed",
+  "Attack Technique - Attack T"."attack_t_desc" AS "Attack Technique - Attack T__attack_t_desc",
+  "Attack Technique - Attack T"."attack_t_detection" AS "Attack Technique - Attack T__attack_t_detection",
+  "Attack Technique - Attack T"."attack_t_url" AS "Attack Technique - Attack T__attack_t_url",
+  "Attack Technique - Attack T"."attack_t_matrix_version" AS "Attack Technique - Attack T__attack_t_matrix_version",
+  "Attack Tactic - Attack Tac"."attack_tac_ID" AS "Attack Tactic - Attack Tac__attack_tac_ID",
+  "Attack Tactic - Attack Tac"."attack_tac_name" AS "Attack Tactic - Attack Tac__attack_tac_name",
+  "Attack Tactic - Attack Tac"."attack_tac_desc" AS "Attack Tactic - Attack Tac__attack_tac_desc"
+FROM
+  "CSF_Function"
+ 
+LEFT JOIN "CSF_Category" AS "Csf Category" ON "CSF_Function"."csf_f_ID" = "Csf Category"."csf_f_ID"
+  LEFT JOIN "CSF_Subcategory" AS "Csf Subcategory" ON "Csf Category"."csf_c_ID" = "Csf Subcategory"."csf_c_ID"
+  LEFT JOIN "SP80053_Control" AS "Sp80053 Control - Sp80053 C" ON "Csf Subcategory"."sp80053_c_ID" = "Sp80053 Control - Sp80053 C"."sp80053_c_ID"
+  LEFT JOIN "SP80053_ISO_Mapping" AS "Sp80053 Iso Mapping" ON "Sp80053 Control - Sp80053 C"."sp80053_c_ID" = "Sp80053 Iso Mapping"."sp80053_c_ID"
+  LEFT JOIN "ISO27001_Control" AS "Iso27001 Control - Iso27001 C" ON "Sp80053 Iso Mapping"."iso27001_c_ID" = "Iso27001 Control - Iso27001 C"."iso27001_c_ID"
+  LEFT JOIN "SP80053_Defend_Mapping" AS "Sp80053 Defend Mapping" ON "Sp80053 Control - Sp80053 C"."sp80053_c_ID" = "Sp80053 Defend Mapping"."sp80053_c_ID"
+  LEFT JOIN "Defend_Technique" AS "Defend Technique - Defend T" ON "Sp80053 Defend Mapping"."defend_t_ID" = "Defend Technique - Defend T"."defend_t_ID"
+  LEFT JOIN "Defend_Tactic" AS "Defend Tactic - Defend Tac" ON "Defend Technique - Defend T"."defend_tac_ID" = "Defend Tactic - Defend Tac"."defend_tac_ID"
+  LEFT JOIN "Defend_Attack_Mapping" AS "Defend Attack Mapping" ON "Defend Technique - Defend T"."defend_t_ID" = "Defend Attack Mapping"."defend_t_ID"
+  LEFT JOIN "Attack_Technique" AS "Attack Technique - Attack T" ON "Defend Attack Mapping"."attack_t_ID" = "Attack Technique - Attack T"."attack_t_ID"
+  LEFT JOIN "Attack_Tactic" AS "Attack Tactic - Attack Tac" ON "Attack Technique - Attack T"."attack_tac_ID" = "Attack Tactic - Attack Tac"."attack_tac_ID"
+LIMIT
+  200000

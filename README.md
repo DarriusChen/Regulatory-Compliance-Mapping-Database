@@ -1,4 +1,4 @@
-# Regulatory-Compliance-Mapping-Database (Jira Testing)
+# Regulatory-Compliance-Mapping-Database
 
 ## Abstract
 This project aims to create a database of the mapping between different Regulatory Compliance Standards and Cybersecurity Frameworks. We use Metabase to help join the tables, then use GraphQL as our data search tool. (Of course, there are still many alternatives like Elastic Stack or Redis, but we use GraphQL in this case.)     

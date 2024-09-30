@@ -4,9 +4,9 @@
 This project aims to build a comprehensive database that maps various regulatory compliance standards, offering a powerful search function that allows users to cross-reference standards efficiently. It simplifies the compliance process, helping organizations ensure adherence to multiple regulations. (There are still many alternatives like Elastic Stack or Redis, but we use GraphQL in this case.)
 
 ## Features
-Compliance Mapping: Seamless cross-referencing between multiple regulatory standards.
-Search Functionality: Easy-to-use, fast lookup for specific standards.
-Scalability: Supports future regulatory frameworks.
+- Compliance Mapping: Seamless cross-referencing between multiple regulatory standards.
+- Search Functionality: Easy-to-use, fast lookup for specific standards.
+- Scalability: Supports future regulatory frameworks.
 
 
 ## Regulatory compliance standards

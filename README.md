@@ -1,7 +1,15 @@
 # Regulatory-Compliance-Mapping-Database
 
-## Abstract
-This project aims to create a database of the mapping between different Regulatory Compliance Standards and Cybersecurity Frameworks. We use Metabase to help join the tables, then use GraphQL as our data search tool. (Of course, there are still many alternatives like Elastic Stack or Redis, but we use GraphQL in this case.)     
+## Overview
+This project aims to build a comprehensive database that maps various regulatory compliance standards, offering a powerful search function that allows users to cross-reference standards efficiently. It simplifies the compliance process, helping organizations ensure adherence to multiple regulations. (There are still many alternatives like Elastic Stack or Redis, but we use GraphQL in this case.)
+---
+## Features
+Compliance Mapping: Seamless cross-referencing between multiple regulatory standards.
+Search Functionality: Easy-to-use, fast lookup for specific standards.
+Scalability: Supports future regulatory frameworks.
+---
+
+## Regulatory compliance standards
 The spreadsheets of five standards and frameworks:
 1. [NIST Cybersecurity Framework (CSF)](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)
 2. [NIST SP 800-53](https://csrc.nist.gov/files/pubs/sp/800/53/r5/upd1/final/docs/sp800-53r5-controls.xlsx)
